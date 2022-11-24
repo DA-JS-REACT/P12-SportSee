@@ -19,7 +19,7 @@
     height: 60px;
 }
 .nav-header {
-    color:var(--nav-color);
+    color:var(--color-primary);
     width:80%;
 }
 .nav-item {

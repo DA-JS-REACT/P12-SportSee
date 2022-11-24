@@ -2,12 +2,12 @@
 
   /* color */
   --background-nav:#020203;
-  --nav-color:#FFFFFF;
-  --grey:#74798C;
+  --color-primary:#FFFFFF;
+  --tertiary-color:#74798C;
   --color-name-data:#20253A;
-  --primary-red:#FF0101;
-  --graph-red:#E60000;
-  --graph-black:#282D30;
+  --secondary-color:#FF0101;
+  --graph-primary:#E60000;
+  --graph-secondary:#282D30;
 
   /* font */
   --font:'Roboto';
@@ -18,6 +18,7 @@
 body {
   font-family:var(--font , var(--default-font));
   font-size: var(--size);
+  font-weight:500;
 }
 
 

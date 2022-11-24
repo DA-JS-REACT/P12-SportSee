@@ -1,6 +1,8 @@
+import './index.css'
+
 function Home() {
     return (
-        <section className="home-container">
+        <section className="homeWrapper">
             <h1>Hello</h1>
         </section>
     )
