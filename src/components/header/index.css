@@ -1,0 +1,32 @@
+.headerWrapper {
+    width: 100%;
+    background: var(--background-nav);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:10px;
+}
+
+
+.header-logo {
+    width: 20%;
+    padding: 8px 18px;
+    display: flex;
+    justify-content: start;
+}
+.logo {
+    width: 178px;
+    height: 60px;
+}
+.nav-header {
+    color:var(--nav-color);
+    width:80%;
+}
+.nav-item {
+    display: flex;
+    justify-content: space-around;
+}
+.nav-item-list {
+    display:inline-block;
+    font-size: calc(var(--size) *2 );
+}
