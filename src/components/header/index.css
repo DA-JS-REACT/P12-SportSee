@@ -30,3 +30,7 @@
     display:inline-block;
     font-size: calc(var(--size) *2 );
 }
+
+.active {
+    text-decoration: underline;
+}

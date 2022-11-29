@@ -4,7 +4,7 @@ import Icon2 from '../../assets/icon/icon2.svg'
 import Icon3 from '../../assets/icon/icon3.svg'
 import Icon4 from '../../assets/icon/icon4.svg'
 
-function LayoutVerical() {
+function LayoutVertical() {
     return (
         <section className="layoutVerticalWrapper">
             <nav className="icon-container">
@@ -30,4 +30,4 @@ function LayoutVerical() {
     )
 }
 
-export default LayoutVerical
+export default LayoutVertical

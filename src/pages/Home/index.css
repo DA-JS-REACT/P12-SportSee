@@ -1,4 +1,30 @@
 .homeWrapper {
     width: 90%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    position: relative;
+}
+.home-logo{
+    padding:20px;
+    position:absolute;
+    top:20%;
+}
+.home-logo  >  img {
+    width: 356px;
+    height:128px;
+}
+.home-list-link {
+    width:60%;
+
+}
+.list-link {
+    display: flex;
+    justify-content:space-around;
+}
+.link-item {
+    margin-right: 20px;
+    font-size:calc(var(--size) *2 );
 }

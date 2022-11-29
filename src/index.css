@@ -20,5 +20,8 @@ body {
   font-size: var(--size);
   font-weight:500;
 }
+a {
+  text-decoration: none;
+}
 
 
