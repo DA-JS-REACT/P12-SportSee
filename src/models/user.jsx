@@ -8,25 +8,6 @@ class User extends Component {
         super(data)
         this.state = { profilUser: {} }
     }
-    // componentDidMount() {
-    //     const url = '../data/mockdata.json'
-    //     const userId = parseInt(this.props.userId)
-    //     fetch(url)
-    //         .then((res) => {
-    //             if (res.ok) {
-    //                 return res.json()
-    //             }
-    //         })
-    //         .then(
-    //             (result) => {
-    //                 const toto = result.users.find((user) => user.id === userId)
-    //                 this.setState({ profilUser: toto })
-    //             },
-    //             (error) => {
-    //                 console.log(error)
-    //             }
-    //         )
-    // }
     componentDidMount() {
         this.setState({ profilUser: this.props.data })
     }

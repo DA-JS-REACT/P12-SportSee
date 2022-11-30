@@ -6,6 +6,7 @@ import User from '../../models/user'
 import { fetchData } from '../../components/Api/index'
 import './index.css'
 import Activity from '../../models/activity'
+import Loader from '../../components/Loader'
 
 function Dashboard() {
     const { userId } = useParams()
@@ -16,20 +17,22 @@ function Dashboard() {
     // const { data, error, isLoading } = useFetch(url)
     const { data, error, isLoading } = fetchData()
     const id = parseInt(userId)
+
     if (error) {
         return <div>Oups il y a eu un problème</div>
     }
+
     useEffect(() => {
         const length = Object.keys(data).length
         if (length > 0) {
             const profil = data.users.find((user) => user.id === id)
             setUser(profil)
             const activity = data.activity.find((user) => user.userId === id)
-            setActivity(activity)
+            setActivity(activity.sessions)
             setIsData(true)
         }
     }, [data])
-    console.log(user)
+
     return (
         <section className="dashboardWrapper">
             <Header />
@@ -37,7 +40,7 @@ function Dashboard() {
                 <LayoutVertical />
 
                 {isLoading ? (
-                    <div> chargement ...........</div>
+                    <Loader />
                 ) : isData ? (
                     <div>
                         <User data={user} />

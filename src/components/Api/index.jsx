@@ -5,6 +5,7 @@ export function fetchData() {
     const [error, setError] = useState(false)
     const [isLoading, setLoading] = useState(true)
     const url = '../data/mockdata.json'
+    // const url = 'http://localhost:3000/user/${userId}'
     const fetchOptions = {
         method: 'GET',
         headers: {
