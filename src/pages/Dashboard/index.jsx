@@ -2,57 +2,74 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Header from '../../components/header'
 import LayoutVertical from '../../components/layoutVertical'
-import User from '../../models/user'
-import { fetchData } from '../../components/Api/index'
 import './index.css'
-import Activity from '../../models/activity'
+import Activity from '../../Models/activity'
 import Loader from '../../components/Loader'
+import { fetchData } from '../../Services/Api'
+import { getUser } from '../../Services/Api/getUser'
+import { getActivity } from '../../Services/Api/getActivity'
+import Banner from '../../components/banner'
+import { dataMocked } from '../../Services/Api/settings'
 
 function Dashboard() {
     const { userId } = useParams()
     const [user, setUser] = useState(null)
     const [activity, setActivity] = useState(null)
-    const [isData, setIsData] = useState(false)
-    // const url = '../data/mockdata.json'
-    // const { data, error, isLoading } = useFetch(url)
-    const { data, error, isLoading } = fetchData()
-    const id = parseInt(userId)
 
-    if (error) {
-        return <div>Oups il y a eu un problème</div>
-    }
+    const [getData, setGetData] = useState({ ' ': {} })
+    const [error, setError] = useState(false)
+    const [isLoading, setLoading] = useState(true)
+    const [isMock, setIsMock] = useState(false)
+
+    // if (error) {
+    //     return <div>Oups il y a eu un problème</div>
+    // }
 
     useEffect(() => {
-        const length = Object.keys(data).length
-        if (length > 0) {
-            const profil = data.users.find((user) => user.id === id)
-            setUser(profil)
-            const activity = data.activity.find((user) => user.userId === id)
-            setActivity(activity.sessions)
-            setIsData(true)
-        }
-    }, [data])
+        // if (dataMocked) {
+        //     setIsMock(true)
+        //     // fetchData(setGetData, setError, setLoading, id, 'user', isMock)
+        //     // setUser(getData)
+        //     // fetchData(setGetData, setError, setLoading, id, 'activity', isMock)
+        //     // setActivity(getData)
+        // } else {
+        //     setIsMock(false)
+        //     fetchData(setGetData, setError, setLoading, userId, 'user')
+        // }
+        getUser(setUser, setError, setLoading, userId)
+        getActivity(setActivity, setError, setLoading, userId)
+    }, [userId])
+
+    console.log('activity', activity)
 
     return (
         <section className="dashboardWrapper">
             <Header />
             <div className="container">
                 <LayoutVertical />
-
                 {isLoading ? (
                     <Loader />
-                ) : isData ? (
+                ) : user && activity ? (
                     <div>
-                        <User data={user} />
-                        <div>
-                            <Activity data={activity} />
-                        </div>
+                        <Banner name={user.getUser.firstName} />
+                        <Activity data={activity} />
                     </div>
                 ) : (
-                    <div>Oups</div>
+                    ''
                 )}
             </div>
         </section>
     )
 }
 export default Dashboard
+
+// {isLoading ? (
+//
+// ) : isData ? (
+//     <div>
+//         <Banner name={getUser.firstName} />
+//         <div>{/* <Activity data={activity} /> */}</div>
+//     </div>
+// ) : (
+//     <div>Oups</div>
+// )}

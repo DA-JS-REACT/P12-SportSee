@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { random } from '../Utils'
+import { random } from '../../Utils'
 import './user.css'
 
 class User extends Component {

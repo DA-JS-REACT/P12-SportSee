@@ -1,9 +1,9 @@
 import './App.css'
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Home from '../../pages/Home'
-import Profil from '../../pages/Profil'
-import Dashboard from '../../pages/Dashboard'
+import Home from '../../Pages/Home'
+import Profil from '../../Pages/Profil'
+import Dashboard from '../../Pages/Dashboard'
 
 function App() {
     return (

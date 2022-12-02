@@ -28,7 +28,7 @@
         "spaced-comment": ["error", "always"],
         "jsx-quotes": ["error", "prefer-double"],
         "semi": ["error", "never"],
-        "indent": ["error", 4],
+        "indent": ["error", 4, { "SwitchCase": 1 }],
         "react/no-unescaped-entities": 0,
         "react/jsx-uses-react": "off",
         "react/react-in-jsx-scope": "off"
