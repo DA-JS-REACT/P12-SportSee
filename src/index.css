@@ -1,27 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 :root {
+    /* color */
+    --background-nav: #020203;
+    --color-primary: #ffffff;
+    --tertiary-color: #74798c;
+    --color-name-data: #20253a;
+    --secondary-color: #ff0101;
+    --graph-primary: #e60000;
+    --graph-secondary: #282d30;
+    --background-color: #fbfbfb;
 
-  /* color */
-  --background-nav:#020203;
-  --color-primary:#FFFFFF;
-  --tertiary-color:#74798C;
-  --color-name-data:#20253A;
-  --secondary-color:#FF0101;
-  --graph-primary:#E60000;
-  --graph-secondary:#282D30;
-
-  /* font */
-  --font:'Roboto';
-  --default-font:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  --size:12px;
+    /* font */
+    --font: 'Roboto', sans-serif;
+    --default-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+    --size: 12px;
 }
 
 body {
-  font-family:var(--font , var(--default-font));
-  font-size: var(--size);
-  font-weight:500;
+    font-family: var(--font, var(--default-font));
+    font-size: var(--size);
+    font-weight: 500;
 }
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
-
-

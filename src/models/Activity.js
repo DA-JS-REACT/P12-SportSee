@@ -11,7 +11,7 @@ export default class Activity {
     }
 
     get date() {
-        let newDate = new Date(this._date)
+        const newDate = new Date(this._date)
 
         return newDate
     }
@@ -24,6 +24,6 @@ export default class Activity {
     get day() {
         const day = new Date(this._day)
 
-        return day
+        return day.getDate()
     }
 }

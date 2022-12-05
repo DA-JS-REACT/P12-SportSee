@@ -1,0 +1,37 @@
+.userInfos-Wrapper {
+    width: 258px;
+    height: 124px;
+    margin: 0 auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: Var(--background-color);
+}
+
+.userInfos-logo {
+    width: 60px;
+    height: 60px;
+}
+.userInfos-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 180px;
+    height: 60px;
+    margin-left: 15px;
+}
+.text-value {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    padding: 3px;
+}
+
+.text-title {
+    color: var(--tertiary-color);
+    width: 100%;
+    font-size: 14px;
+    padding: 3px;
+}
