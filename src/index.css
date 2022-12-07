@@ -9,7 +9,8 @@
     --secondary-color: #ff0101;
     --graph-primary: #e60000;
     --graph-secondary: #282d30;
-    --background-color: #fbfbfb;
+    /* --background-color: #fbfbfb; */
+    --background-color: #e7dede;
 
     /* font */
     --font: 'Roboto', sans-serif;
@@ -22,6 +23,7 @@ body {
     font-family: var(--font, var(--default-font));
     font-size: var(--size);
     font-weight: 500;
+    background: var(--color-primary);
 }
 a {
     text-decoration: none;

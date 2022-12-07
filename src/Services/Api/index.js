@@ -1,5 +1,6 @@
 // import { useState, useEffect } from 'react'
 import Activity from '../../Models/Activity'
+import Average from '../../Models/Average'
 import User from '../../Models/User'
 import { dataMocked } from './settings'
 
@@ -35,11 +36,8 @@ export async function fetchData(
             case 'performance':
                 url = `http://localhost:3000/user/${userId}/performance`
                 break
-            default:
-                url = '../data/mockdata.json'
         }
     }
-
     console.log('url', url)
 
     const fetchOptions = {
@@ -69,6 +67,15 @@ export async function fetchData(
                 sessionsOfUser.push(getActivity)
             })
 
+            const average = result.sessions.find(
+                (session) => session.userId === id
+            )
+            let averageOfUser = []
+            average.sessions.forEach((element) => {
+                const getAverage = new Average(element)
+                averageOfUser.push(getAverage)
+            })
+
             switch (endpoints) {
                 case 'user':
                     setGetData({ user: { getUser } })
@@ -77,25 +84,57 @@ export async function fetchData(
                     setGetData(sessionsOfUser)
                     break
                 case 'average':
-                    setGetData()
+                    setGetData(averageOfUser)
                     break
                 case 'performance':
                     setGetData()
                     break
             }
         } else {
-            console.log('mock false')
             const getUser = new User(result.data)
-            const getActivity = new Activity(result.data.sessions)
+            // setGetData({ getUser })
+
+            let sessionsOfUser = []
+            result.data.sessions.forEach((element) => {
+                const getActivity = new Activity(element)
+                sessionsOfUser.push(getActivity)
+            })
+
+            // setGetData(sessionsOfUser)
+
+            let averageOfUser = []
+            result.data.sessions.forEach((session) => {
+                const getAverages = new Average(session)
+                averageOfUser.push(getAverages)
+            })
+            // if (endpoints === 'user') {
+            //     const getUser = new User(result.data)
+            //     setGetData({ getUser })
+            // } else if (endpoints === 'activity') {
+            //     let sessionsOfUser = []
+            //     result.data.sessions.forEach((element) => {
+            //         const getActivity = new Activity(element)
+            //         sessionsOfUser.push(getActivity)
+            //     })
+            //     setGetData(sessionsOfUser)
+            // } else if (endpoints === 'average') {
+            //     let averageOfUser = []
+            //     result.data.sessions.forEach((session) => {
+            //         const getAverages = new Average(session)
+            //         averageOfUser.push(getAverages)
+            //     })
+            //     setGetData(averageOfUser)
+            // }
+
             switch (endpoints) {
                 case 'user':
-                    setGetData({ user: { getUser } })
+                    setGetData({ getUser })
                     break
                 case 'activity':
-                    setGetData(getActivity)
+                    setGetData(sessionsOfUser)
                     break
                 case 'average':
-                    setGetData()
+                    setGetData(averageOfUser)
                     break
                 case 'performance':
                     setGetData()
@@ -111,3 +150,17 @@ export async function fetchData(
 
     return setGetData, setError, setLoading
 }
+// switch (endpoints) {
+//     case 'user':
+//         return console.log('fetch', result.data)
+
+//     case 'activity':
+//         console.log('fetch1', result.data)
+//         break
+//     case 'average':
+//         setGetData(getAverage)
+//         break
+//     case 'performance':
+//         setGetData()
+//         break
+// }

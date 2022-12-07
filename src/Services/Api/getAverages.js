@@ -1,12 +1,13 @@
-import Activity from '../../Models/Activity'
+import Average from '../../Models/Average'
+
 import { dataMocked } from './settings'
 
-export async function getActivity(setActivity, setError, setLoading, userId) {
+export async function getAverages(setAverages, setError, setLoading, userId) {
     let url = ''
     if (dataMocked) {
         url = '../data/mockdata.json'
     } else {
-        url = `http://localhost:3000/user/${userId}/activity`
+        url = `http://localhost:3000/user/${userId}/average-sessions`
     }
 
     const fetchOptions = {
@@ -24,24 +25,24 @@ export async function getActivity(setActivity, setError, setLoading, userId) {
 
         if (dataMocked) {
             const id = parseInt(userId)
-            const activity = result.activity.find(
-                (activity) => activity.userId === id
+            const average = result.sessions.find(
+                (session) => session.userId === id
             )
 
-            let sessionsOfUser = []
-            activity.sessions.forEach((element) => {
-                const getActivity = new Activity(element)
-                sessionsOfUser.push(getActivity)
+            let averageOfUser = []
+            average.sessions.forEach((element) => {
+                const getAverage = new Average(element)
+                averageOfUser.push(getAverage)
             })
-            setActivity(sessionsOfUser)
+            setAverages(averageOfUser)
         } else {
-            let sessionsOfUser = []
+            let averageOfUser = []
             result.data.sessions.forEach((session) => {
-                const getActivity = new Activity(session)
-                sessionsOfUser.push(getActivity)
+                const getAverages = new Average(session)
+                averageOfUser.push(getAverages)
             })
 
-            setActivity(sessionsOfUser)
+            setAverages(averageOfUser)
         }
     } catch (err) {
         console.log(err)
@@ -50,5 +51,5 @@ export async function getActivity(setActivity, setError, setLoading, userId) {
         setLoading(false)
     }
 
-    return setActivity, setError, setLoading
+    return setAverages, setError, setLoading
 }

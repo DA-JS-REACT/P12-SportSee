@@ -1,12 +1,13 @@
-import User from '../../Models/User'
+import Perf from '../../Models/Perf'
+
 import { dataMocked } from './settings'
 
-export async function getUser(setUser, setError, setLoading, userId) {
+export async function getPerf(setPerf, setError, setLoading, userId) {
     let url = ''
     if (dataMocked) {
         url = '../data/mockdata.json'
     } else {
-        url = `http://localhost:3000/user/${userId}`
+        url = `http://localhost:3000/user/${userId}/performance`
     }
 
     const fetchOptions = {
@@ -24,12 +25,14 @@ export async function getUser(setUser, setError, setLoading, userId) {
 
         if (dataMocked) {
             const id = parseInt(userId)
-            const profil = result.users.find((user) => user.id === id)
-            const getUser = new User(profil)
-            setUser({ getUser })
+            const performance = result.perf.find(
+                (perform) => perform.userId === id
+            )
+            const getPerf = new Perf(performance)
+            setPerf(getPerf)
         } else {
-            const getUser = new User(result.data)
-            setUser({ getUser })
+            const getPerf = new Perf(result.data)
+            setPerf(getPerf)
         }
     } catch (err) {
         console.log(err)
@@ -38,5 +41,5 @@ export async function getUser(setUser, setError, setLoading, userId) {
         setLoading(false)
     }
 
-    return setUser, setError, setLoading
+    return setPerf, setError, setLoading
 }

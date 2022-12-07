@@ -2,21 +2,28 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Header from '../../components/header'
 import LayoutVertical from '../../components/layoutVertical'
-import './index.css'
 
 import Loader from '../../components/Loader'
 import { fetchData } from '../../Services/Api'
-// import { getUser } from '../../Services/Api/getUser'
-// import { getActivity } from '../../Services/Api/getActivity'
+import { getUser } from '../../Services/Api/getUser'
+import { getActivity } from '../../Services/Api/getActivity'
+import { getAverages } from '../../Services/Api/getAverages'
+import { getPerf } from '../../Services/Api/getPerf'
+
 import Banner from '../../components/banner'
 // import { dataMocked } from '../../Services/Api/settings'
 import BarChartSession from '../../components/BarChartSession'
 import UserInfos from '../../components/UserInfos'
+import LinearChartAverage from '../../components/LinearChartAverage'
+import './index.css'
+import RadarChartPerf from '../../components/RadarChartPerf'
 
 function Dashboard() {
     const { userId } = useParams()
     const [user, setUser] = useState({ ' ': {} })
     const [activity, setActivity] = useState([])
+    const [average, setAverage] = useState([])
+    const [perf, setPerf] = useState(null)
 
     const [error, setError] = useState(false)
     const [isLoading, setLoading] = useState(true)
@@ -26,14 +33,22 @@ function Dashboard() {
     // }
 
     useEffect(() => {
-        fetchData(setUser, setError, setLoading, userId, 'user')
-        fetchData(setActivity, setError, setLoading, userId, 'activity')
-        // getUser(setUser, setError, setLoading, userId)
-        // getActivity(setActivity, setError, setLoading, userId)
+        // fetchData(setUser, setError, setLoading, userId, 'user')
+        // fetchData(setActivity, setError, setLoading, userId, 'activity')
+        // fetchData(setAverage, setError, setLoading, userId, 'average')
+        getUser(setUser, setError, setLoading, userId)
+        getActivity(setActivity, setError, setLoading, userId)
+        getAverages(setAverage, setError, setLoading, userId)
+        getPerf(setPerf, setError, setLoading, userId)
     }, [userId])
 
-    // console.log('activity', activity[0].day)
-    console.log('user', user)
+    // console.log('user', user)
+    // console.log('activity', activity)
+    // console.log('average', average)
+    // console.log('perf', perf)
+    if (perf) {
+        console.log('perf1', perf.translateENtoFR)
+    }
 
     return (
         <section className="dashboard-Wrapper">
@@ -42,32 +57,35 @@ function Dashboard() {
                 <LayoutVertical />
                 {isLoading ? (
                     <Loader />
-                ) : user.user && activity ? (
+                ) : user && activity && average && perf ? (
                     <div className="container-user">
                         <section className="user-banner">
-                            <Banner name={user.user.getUser.firstName} />
+                            <Banner name={user.getUser.firstName} />
                         </section>
                         <section className="user-infos">
                             <div className="infos-graph">
                                 <BarChartSession data={activity} />
-                                <div></div>
+                                <div className="graph">
+                                    <LinearChartAverage data={average} />
+                                    <RadarChartPerf data={perf} />
+                                </div>
                             </div>
 
                             <aside className="infos-data">
                                 <UserInfos
-                                    value={user.user.getUser.calories}
+                                    value={user.getUser.calories}
                                     keyData={'calories'}
                                 />
                                 <UserInfos
-                                    value={user.user.getUser.proteines}
+                                    value={user.getUser.proteines}
                                     keyData={'proteines'}
                                 />
                                 <UserInfos
-                                    value={user.user.getUser.glucides}
+                                    value={user.getUser.glucides}
                                     keyData={'glucides'}
                                 />
                                 <UserInfos
-                                    value={user.user.getUser.lipides}
+                                    value={user.getUser.lipides}
                                     keyData={'lipides'}
                                 />
                             </aside>
