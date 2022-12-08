@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import {
     BarChart,
     Bar,
@@ -11,24 +10,10 @@ import {
 } from 'recharts'
 import PropTypes from 'prop-types'
 import './index.css'
+import { renderCustomToolTipBar } from './utils'
+import { renderColorfulLegendText } from './utils'
 
 function BarChartSession({ data }) {
-    const CustomTooltip = ({ active, payload }) => {
-        if (active && payload && payload.length) {
-            return (
-                <div className="custom-tooltip">
-                    <p className="label">{`${payload[0].value}g`}</p>
-                    <p className="label">{`${payload[1].value}KCal`}</p>
-                </div>
-            )
-        }
-
-        return null
-    }
-    const renderColorfulLegendText = (value) => {
-        return <span style={{ color: '#74798c' }}>{value}</span>
-    }
-    console.log('radar', data)
     return (
         <div className="barchart-wrapper">
             <h2 className="barchart-title">Activité quotidienne</h2>
@@ -64,7 +49,7 @@ function BarChartSession({ data }) {
                     />
 
                     <YAxis yAxisId="cal" datakey="calories" hide={true} />
-                    <Tooltip content={<CustomTooltip />} offset={20} />
+                    <Tooltip content={renderCustomToolTipBar} offset={20} />
                     <Legend
                         verticalAlign="top"
                         align="right"

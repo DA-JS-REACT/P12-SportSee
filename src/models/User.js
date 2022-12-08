@@ -4,12 +4,13 @@ export default class User {
      * @param {Object} data  data of users
      */
     constructor(data) {
-        this._firstName = data.userInfos.firstName
+        this._firstName = data.firstname
         this._keyData = data.keyData
-        this._calories = data.keyData.calorieCount
-        this._proteines = data.keyData.proteinCount
-        this._glucides = data.keyData.carbohydrateCount
-        this._lipides = data.keyData.lipidCount
+        this._calories = data.calories
+        this._proteines = data.proteines
+        this._glucides = data.glucides
+        this._lipides = data.lipides
+        this._score = data.score
     }
 
     get firstName() {
@@ -31,5 +32,11 @@ export default class User {
     }
     get lipides() {
         return `${this._lipides}g`
+    }
+
+    get score() {
+        const tab = []
+        tab.push({ score: this._score * 100, fill: '#FF0000' })
+        return tab
     }
 }

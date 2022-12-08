@@ -11,22 +11,9 @@ import {
 
 import PropTypes from 'prop-types'
 import './index.css'
+import { renderCustomTooltipLinear } from './utils'
 
 function LinearChartAverage({ data }) {
-    // eslint-disable-next-line react/prop-types
-    const CustomTooltip = ({ active, payload }) => {
-        // eslint-disable-next-line react/prop-types
-        if (active && payload && payload.length) {
-            return (
-                <div className="custom-tooltip tooltip-linearChart">
-                    <p className="label label-linearChart">{`${payload[0].value} min`}</p>
-                </div>
-            )
-        }
-
-        return null
-    }
-
     return (
         <div className="linearChart-Wrapper">
             <h2 className="linearChart-title">Durée moyenne des sessions</h2>
@@ -60,7 +47,7 @@ function LinearChartAverage({ data }) {
                     />
 
                     <Tooltip
-                        content={<CustomTooltip />}
+                        content={renderCustomTooltipLinear}
                         cursor={{ stroke: 'red', strokeWidth: 2 }}
                     />
 

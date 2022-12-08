@@ -1,4 +1,5 @@
 import Activity from '../../Models/Activity'
+import { reshapeeActivity } from '../../Utils'
 import { dataMocked } from './settings'
 
 export async function getActivity(setActivity, setError, setLoading, userId) {
@@ -30,14 +31,17 @@ export async function getActivity(setActivity, setError, setLoading, userId) {
 
             let sessionsOfUser = []
             activity.sessions.forEach((element) => {
-                const getActivity = new Activity(element)
+                const data = reshapeeActivity(element)
+
+                const getActivity = new Activity(data)
                 sessionsOfUser.push(getActivity)
             })
             setActivity(sessionsOfUser)
         } else {
             let sessionsOfUser = []
             result.data.sessions.forEach((session) => {
-                const getActivity = new Activity(session)
+                const data = reshapeeActivity(session)
+                const getActivity = new Activity(data)
                 sessionsOfUser.push(getActivity)
             })
 

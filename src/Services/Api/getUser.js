@@ -1,4 +1,5 @@
 import User from '../../Models/User'
+import reshapeUser from '../../Utils'
 import { dataMocked } from './settings'
 
 export async function getUser(setUser, setError, setLoading, userId) {
@@ -17,6 +18,7 @@ export async function getUser(setUser, setError, setLoading, userId) {
             Accept: 'application/json',
         },
     }
+
     try {
         const response = await fetch(url, fetchOptions)
 
@@ -25,11 +27,13 @@ export async function getUser(setUser, setError, setLoading, userId) {
         if (dataMocked) {
             const id = parseInt(userId)
             const profil = result.users.find((user) => user.id === id)
-            const getUser = new User(profil)
-            setUser({ getUser })
+            const data = reshapeUser(profil)
+            const getUser = new User(data)
+            setUser(getUser)
         } else {
-            const getUser = new User(result.data)
-            setUser({ getUser })
+            const data = reshapeUser(result.data)
+            const getUser = new User(data)
+            setUser(getUser)
         }
     } catch (err) {
         console.log(err)

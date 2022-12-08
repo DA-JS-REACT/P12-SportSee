@@ -17,6 +17,7 @@ import UserInfos from '../../components/UserInfos'
 import LinearChartAverage from '../../components/LinearChartAverage'
 import './index.css'
 import RadarChartPerf from '../../components/RadarChartPerf'
+import RadialChartScore from '../../components/RadialChartScore'
 
 function Dashboard() {
     const { userId } = useParams()
@@ -46,9 +47,9 @@ function Dashboard() {
     // console.log('activity', activity)
     // console.log('average', average)
     // console.log('perf', perf)
-    if (perf) {
-        console.log('perf1', perf.translateENtoFR)
-    }
+    // if (perf) {
+    //     console.log('perf1', perf.translateENtoFR)
+    // }
 
     return (
         <section className="dashboard-Wrapper">
@@ -60,7 +61,7 @@ function Dashboard() {
                 ) : user && activity && average && perf ? (
                     <div className="container-user">
                         <section className="user-banner">
-                            <Banner name={user.getUser.firstName} />
+                            <Banner name={user.firstName} />
                         </section>
                         <section className="user-infos">
                             <div className="infos-graph">
@@ -68,24 +69,25 @@ function Dashboard() {
                                 <div className="graph">
                                     <LinearChartAverage data={average} />
                                     <RadarChartPerf data={perf} />
+                                    <RadialChartScore data={user.score} />
                                 </div>
                             </div>
 
                             <aside className="infos-data">
                                 <UserInfos
-                                    value={user.getUser.calories}
+                                    value={user.calories}
                                     keyData={'calories'}
                                 />
                                 <UserInfos
-                                    value={user.getUser.proteines}
+                                    value={user.proteines}
                                     keyData={'proteines'}
                                 />
                                 <UserInfos
-                                    value={user.getUser.glucides}
+                                    value={user.glucides}
                                     keyData={'glucides'}
                                 />
                                 <UserInfos
-                                    value={user.getUser.lipides}
+                                    value={user.lipides}
                                     keyData={'lipides'}
                                 />
                             </aside>

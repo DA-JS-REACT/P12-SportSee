@@ -4,7 +4,7 @@ export default class Activity {
      * @param {array} data
      */
     constructor(data) {
-        this._date = data.day
+        this._date = data.date
         this._day = data.day
         this._kilogram = data.kilogram
         this._calories = data.calories
