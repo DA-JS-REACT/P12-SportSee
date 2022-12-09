@@ -1,5 +1,6 @@
 import User from '../../Models/User'
-import reshapeUser from '../../Utils'
+import reshapeUser from './reshape'
+
 import { dataMocked } from './settings'
 
 export async function getUser(setUser, setError, setLoading, userId) {

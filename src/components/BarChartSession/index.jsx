@@ -80,7 +80,12 @@ function BarChartSession({ data }) {
     )
 }
 BarChartSession.propTypes = {
-    data: PropTypes.array.isRequired,
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            kilogram: PropTypes.number,
+            calories: PropTypes.number,
+        })
+    ).isRequired,
 }
 
 export default BarChartSession

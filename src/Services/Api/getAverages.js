@@ -1,4 +1,5 @@
 import Average from '../../Models/Average'
+import { reshapeAverage } from './reshape'
 
 import { dataMocked } from './settings'
 
@@ -31,15 +32,18 @@ export async function getAverages(setAverages, setError, setLoading, userId) {
 
             let averageOfUser = []
             average.sessions.forEach((element) => {
-                const getAverage = new Average(element)
+                const data = reshapeAverage(element)
+                const getAverage = new Average(data)
                 averageOfUser.push(getAverage)
             })
+
             setAverages(averageOfUser)
         } else {
             let averageOfUser = []
             result.data.sessions.forEach((session) => {
-                const getAverages = new Average(session)
-                averageOfUser.push(getAverages)
+                const data = reshapeAverage(session)
+                const getAverage = new Average(data)
+                averageOfUser.push(getAverage)
             })
 
             setAverages(averageOfUser)

@@ -64,6 +64,11 @@ function LinearChartAverage({ data }) {
     )
 }
 LinearChartAverage.propTypes = {
-    data: PropTypes.array.isRequired,
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            formatDay: PropTypes.string,
+            duration: PropTypes.number,
+        })
+    ).isRequired,
 }
 export default LinearChartAverage

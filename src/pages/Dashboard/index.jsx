@@ -47,9 +47,9 @@ function Dashboard() {
     // console.log('activity', activity)
     // console.log('average', average)
     // console.log('perf', perf)
-    // if (perf) {
-    //     console.log('perf1', perf.translateENtoFR)
-    // }
+    if (perf) {
+        console.log('perf1', perf.dataOfperf)
+    }
 
     return (
         <section className="dashboard-Wrapper">

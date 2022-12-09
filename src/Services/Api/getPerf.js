@@ -1,4 +1,5 @@
 import Perf from '../../Models/Perf'
+import { reshapePerf } from './reshape'
 
 import { dataMocked } from './settings'
 
@@ -28,10 +29,12 @@ export async function getPerf(setPerf, setError, setLoading, userId) {
             const performance = result.perf.find(
                 (perform) => perform.userId === id
             )
-            const getPerf = new Perf(performance)
+            const data = reshapePerf(performance)
+            const getPerf = new Perf(data)
             setPerf(getPerf)
         } else {
-            const getPerf = new Perf(result.data)
+            const data = reshapePerf(result.data)
+            const getPerf = new Perf(data)
             setPerf(getPerf)
         }
     } catch (err) {

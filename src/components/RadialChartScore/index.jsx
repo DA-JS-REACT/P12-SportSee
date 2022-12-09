@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 import './index.css'
 
 function RadialChartScore({ data }) {
-    console.log(data)
+    // console.log(data)
     const arrOfObj1 = Object.keys(data)
     const arrOfObj2 = Object.values(data)
     const name = arrOfObj1[arrOfObj1.length - 1]
@@ -53,10 +53,5 @@ RadialChartScore.propTypes = {
         })
     ).isRequired,
 }
-// RadialChartScore.propTypes = {
-//     data: PropTypes.shape({
-//         score: PropTypes.number,
-//         fill: PropTypes.string,
-//     }),
-// }
+
 export default RadialChartScore

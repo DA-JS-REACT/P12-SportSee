@@ -16,7 +16,7 @@ function RadarChartPerf({ data }) {
                     cx="50%"
                     cy="50%"
                     outerRadius="80%"
-                    data={data.translateENtoFR}
+                    data={data.dataOfperf}
                 >
                     <PolarGrid radialLines={false} />
                     <PolarAngleAxis
