@@ -5,7 +5,12 @@ import lipidesIcon from '../../assets/icon/fat-icon.svg'
 import './index.css'
 
 import PropTypes from 'prop-types'
-
+/**
+ *
+ * @param {String} value - value that is received to call Api of User
+ * @param {String} KeyData - which allows the display according to the desired data
+ * @returns
+ */
 function UserInfos({ value, keyData }) {
     let title = ' '
     let icon = ''

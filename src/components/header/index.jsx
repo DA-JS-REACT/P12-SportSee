@@ -1,10 +1,13 @@
 import { NavLink } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 import './index.css'
-
+/**
+ *  Header to the app with navigation
+ * @returns {JsxElement}
+ */
 function Header() {
     return (
-        <div className="headerWrapper">
+        <div className="header-Wrapper">
             <div className="header-logo">
                 <img className="logo" src={logo} alt="logo SportSee" />
             </div>

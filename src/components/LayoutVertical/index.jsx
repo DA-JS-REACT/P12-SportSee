@@ -3,10 +3,13 @@ import Icon1 from '../../assets/icon/icon1.svg'
 import Icon2 from '../../assets/icon/icon2.svg'
 import Icon3 from '../../assets/icon/icon3.svg'
 import Icon4 from '../../assets/icon/icon4.svg'
-
+/**
+ * second navigation  aside to the app
+ * @returns {JsxElement}
+ */
 function LayoutVertical() {
     return (
-        <section className="layoutVerticalWrapper">
+        <section className="layoutVertical-Wrapper">
             <nav className="icon-container">
                 <ul className="list-icon">
                     <li className="list-icon-item">
@@ -24,7 +27,7 @@ function LayoutVertical() {
                 </ul>
             </nav>
             <div className="text-container">
-                <p className="copiright">Copiryght, SportSee 2020</p>
+                <p className="copiright">Copiryght, SportSee 2022</p>
             </div>
         </section>
     )

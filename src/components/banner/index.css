@@ -1,7 +1,7 @@
 .banner-wrapper {
     width: 100%;
     padding: 30px;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 .banner-title {
     font-size: calc(var(--size) * 4);

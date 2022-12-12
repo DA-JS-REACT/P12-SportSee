@@ -9,8 +9,9 @@
     --secondary-color: #ff0101;
     --graph-primary: #e60000;
     --graph-secondary: #282d30;
-    --background-color: #fbfbfb;
-    /* --background-color: #e7dede; */
+    --graph-tertiary: #20253a;
+    /* --background-color: #fbfbfb; */
+    --background-color: #ddcdcd;
 
     /* font */
     --font: 'Roboto', sans-serif;

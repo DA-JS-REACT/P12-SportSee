@@ -1,7 +1,11 @@
+/**
+ * Represents the average-session of User with formated data
+ */
+
 export default class Average {
     /**
      *
-     * @param {array} data for sessions by the user
+     * @param {array} data data for sessions by the user
      */
     constructor(data) {
         this._day = data.day

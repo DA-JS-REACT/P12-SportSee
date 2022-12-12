@@ -1,7 +1,11 @@
+/**
+ * Represents the performance of User with formated data
+ */
+
 export default class Perf {
     /**
      *
-     * @param {array} data for perform by the user
+     * @param {array} data data for perform by the user
      */
     constructor(data) {
         this._kind = data.kind

@@ -1,7 +1,11 @@
 .linearChart-Wrapper {
     background: #ff0000;
-    min-width: 230px;
+
+    min-width: 210px;
     width: 30%;
+    max-width: 30%;
+    height: 263px;
+
     height: 263px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
     border-radius: 5px;

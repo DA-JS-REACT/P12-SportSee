@@ -1,7 +1,18 @@
+/**
+ * Call Api  for endpoint average-session
+ */
 import Average from '../../Models/Average'
 import { reshapeAverage } from './reshape'
-
 import { dataMocked } from './settings'
+
+/**
+ *
+ * @param {State} setAverages  - state which manages the data
+ * @param {State} setError  - state which handles errors on the call Api
+ * @param {State} setLoading - state which manages call loads Api
+ * @param {String} userId  - id of the user retrieved on url
+ * @returns {FetchResponse}
+ */
 
 export async function getAverages(setAverages, setError, setLoading, userId) {
     let url = ''

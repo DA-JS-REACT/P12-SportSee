@@ -1,3 +1,6 @@
+/**
+ *Diagram average score - enpoint /user/:id/
+ */
 import {
     RadialBarChart,
     RadialBar,
@@ -7,34 +10,36 @@ import {
 import PropTypes from 'prop-types'
 import './index.css'
 
+/**
+ * Diagram RadialBarChart of Recharts
+ * @param {array} data  - data for diagram
+ * @returns {JsxElement}
+ */
 function RadialChartScore({ data }) {
-    // console.log(data)
-    const arrOfObj1 = Object.keys(data)
-    const arrOfObj2 = Object.values(data)
-    const name = arrOfObj1[arrOfObj1.length - 1]
-    const score = arrOfObj2[arrOfObj2.length - 1]
-    const format = new Map()
-    format.set(name, score)
-    format.set('fill', 'red')
-    // console.log('arrOfObj1', format)
     const test = [
         {
-            score: 0.2,
-            fill: 'red',
+            score: 100,
+            fill: '#FF0000',
         },
     ]
     return (
         <div className="radialChart-Wrapper">
+            <h2 className="radialChart-title">Score</h2>
+            <p className="radialChart-text">
+                <span>{data[0].score} %</span>
+                <br />
+                de votre Objectif
+            </p>
             <ResponsiveContainer width="100%" height="100%">
                 <RadialBarChart
                     data={data}
-                    innerRadius={100}
-                    outerRadius={160}
+                    innerRadius={90}
+                    outerRadius={90}
                     barSize={10}
                     startAngle={180}
-                    endAngle={80}
+                    endAngle={180 - 360}
                 >
-                    <RadialBar minAngle={180} dataKey="score" />
+                    <RadialBar cornerRadius={5} dataKey="score" />
                     <PolarAngleAxis
                         type="number"
                         domain={[0, 100]}

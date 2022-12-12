@@ -1,3 +1,6 @@
+/**
+ *Diagram for daily activity  - endpoints /user/:id/activity
+ */
 import {
     BarChart,
     Bar,
@@ -12,7 +15,11 @@ import PropTypes from 'prop-types'
 import './index.css'
 import { renderCustomToolTipBar } from './utils'
 import { renderColorfulLegendText } from './utils'
-
+/**
+ * Diagram BarChart of Recharts
+ * @param {array}  data - data for diagram
+ * @returns  {JsxElement}
+ */
 function BarChartSession({ data }) {
     return (
         <div className="barchart-wrapper">

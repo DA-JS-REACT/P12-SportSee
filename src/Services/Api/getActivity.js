@@ -1,8 +1,19 @@
+/**
+ * Call Api  for endpoint activity
+ */
+
 import Activity from '../../Models/Activity'
 import { reshapeActivity } from './reshape'
-
 import { dataMocked } from './settings'
 
+/**
+ *
+ * @param {State} setActivity - state which manages the data
+ * @param {State} setError  - state which handles errors on the call Api
+ * @param {State} setLoading - state which manages call loads Api
+ * @param {String} userId  - id of the user retrieved on url
+ * @returns {FetchResponse}
+ */
 export async function getActivity(setActivity, setError, setLoading, userId) {
     let url = ''
     if (dataMocked) {

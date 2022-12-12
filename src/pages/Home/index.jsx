@@ -3,7 +3,10 @@ import logo from '../../assets/logo.svg'
 import { Link } from 'react-router-dom'
 import { useFetch } from '../../Hooks'
 import Loader from '../../components/Loader'
-
+/**
+ * Home page
+ * @returns  {JsxElement}
+ */
 function Home() {
     const url = '../data/mockdata.json'
     const { data, error, isLoading } = useFetch(url)

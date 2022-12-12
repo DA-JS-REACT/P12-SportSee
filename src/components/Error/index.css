@@ -1,0 +1,26 @@
+.error-Wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.error-body {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.body-title {
+    font-size: 10rem;
+    font-weight: 700;
+}
+.body-message {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.error-link {
+    height: 20%;
+}

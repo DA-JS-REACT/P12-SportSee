@@ -1,7 +1,11 @@
+/**
+ * Represents the User with formated data
+ */
+
 export default class User {
     /**
      *
-     * @param {Object} data  data of users
+     * @param {Object} data  data of users in API
      */
     constructor(data) {
         this._firstName = data.firstname

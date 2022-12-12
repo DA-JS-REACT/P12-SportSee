@@ -1,3 +1,6 @@
+/**
+ *Diagram Performance - enpoint /user/:id/performance
+ */
 import {
     Radar,
     RadarChart,
@@ -8,6 +11,11 @@ import {
 } from 'recharts'
 import './index.css'
 import PropTypes from 'prop-types'
+/**
+ * Diagram RadarChart of Recharts
+ * @param {array} data - data for the Diagram
+ * @returns {JsxElement}
+ */
 function RadarChartPerf({ data }) {
     return (
         <div className="radarchart-Wrapper">
@@ -15,8 +23,9 @@ function RadarChartPerf({ data }) {
                 <RadarChart
                     cx="50%"
                     cy="50%"
-                    outerRadius="80%"
+                    outerRadius="65%"
                     data={data.dataOfperf}
+                    className="test"
                 >
                     <PolarGrid radialLines={false} />
                     <PolarAngleAxis

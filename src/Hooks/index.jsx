@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react'
-
+/**
+ * for simulate connexion of user , only for Home page
+ * @param {String} url - url of mocked data
+ * @returns {FetchResponse}
+ */
 export function useFetch(url) {
     const [data, setData] = useState({})
     const [error, setError] = useState(false)

@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from '../../Pages/Home'
 import Profil from '../../Pages/Profil'
 import Dashboard from '../../Pages/Dashboard'
+import Error from '../Error'
 
 function App() {
     return (
@@ -11,13 +12,11 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/profil" element={<Profil />} />
+                <Route path="/error" element={<Error />} />
+                <Route path="*" element={<Error />} />
                 <Route path="/dashboard">
                     <Route path=":userId" element={<Dashboard />} />
                 </Route>
-                {/* <Route
-                    path="/dashboard/:userId"
-                    render={(props) => <Dashboard {...props} />}
-                /> */}
             </Routes>
         </div>
     )

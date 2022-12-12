@@ -1,4 +1,6 @@
-/* eslint-disable react/prop-types */
+/**
+ *Diagram for the sessions - enpoint /user/:id/average-session
+ */
 import {
     LineChart,
     Line,
@@ -12,12 +14,16 @@ import {
 import PropTypes from 'prop-types'
 import './index.css'
 import { renderCustomTooltipLinear } from './utils'
-
+/**
+ *Diagram LinearChart of Recharts
+ * @param {array} data - data for the Diagram
+ * @returns {JsxElement}
+ */
 function LinearChartAverage({ data }) {
     return (
         <div className="linearChart-Wrapper">
             <h2 className="linearChart-title">Durée moyenne des sessions</h2>
-            <ResponsiveContainer width="100%" height={263}>
+            <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                     data={data}
                     margin={{

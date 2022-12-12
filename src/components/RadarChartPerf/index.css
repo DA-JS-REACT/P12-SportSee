@@ -1,8 +1,9 @@
 .radarchart-Wrapper {
-    min-width: 230px;
+    min-width: 210px;
     width: 30%;
+    max-width: 30%;
     height: 263px;
-    background: #282d30;
+    background: var(--graph-secondary);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
     border-radius: 5px;
 }

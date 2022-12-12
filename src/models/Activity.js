@@ -1,7 +1,11 @@
+/**
+ * Represents the activity of User with formated data
+ */
+
 export default class Activity {
     /**
      *
-     * @param {array} data
+     * @param {array} data data of users in API
      */
     constructor(data) {
         this._date = data.date

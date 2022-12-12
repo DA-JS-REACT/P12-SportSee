@@ -1,3 +1,12 @@
+/**
+ * contain function reshape of the paths to access the data
+ */
+
+/**
+ *
+ * @param {array} data - data to receive from Api endpoint user
+ * @returns  array of object
+ */
 export default function reshapeUser(data) {
     const firstname = data.userInfos.firstName
     const keyData = data.keyData
@@ -18,7 +27,11 @@ export default function reshapeUser(data) {
 
     return newData
 }
-
+/**
+ *
+ * @param {array} data - data to receive from Api endpoint activity
+ * @returns  array of object
+ */
 export function reshapeActivity(data) {
     const date = data.day
     const day = data.day
@@ -33,6 +46,11 @@ export function reshapeActivity(data) {
     return newData
 }
 
+/**
+ *
+ * @param {array} data - data to receive from Api endpoint average-sessions
+ * @returns  array of object
+ */
 export function reshapeAverage(data) {
     const day = data.day
     const formatDay = data.day
@@ -45,6 +63,12 @@ export function reshapeAverage(data) {
     }
     return newData
 }
+
+/**
+ *
+ * @param {array} data - data to receive from Api endpoint performance
+ * @returns  array of object
+ */
 export function reshapePerf(data) {
     const kind = data.kind
     const dataOfperf = data.data

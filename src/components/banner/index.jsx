@@ -3,8 +3,8 @@ import { random } from '../../Utils'
 import './index.css'
 /**
  * Banner for the dashboard
- * @param {String} name   fisrtName for the user
- * @returns  JsxElement
+ * @param {String} name   - fisrtName for the user
+ * @returns  {JsxElement}
  */
 function Banner({ name }) {
     const message = [
