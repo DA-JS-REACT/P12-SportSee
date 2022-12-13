@@ -25,4 +25,4 @@ to launch the micro Api, please follow the procedure here [back-end](https://git
 
 ## Author
 
-<img src="../P12-SportSee/src/assets/fred-lescure.svg">
+<img src="https://github.com/DA-JS-REACT/P12-SportSee/blob/develop/src/assets/fred-lescure.svg">
