@@ -56,7 +56,7 @@ function BarChartSession({ data }) {
                     />
 
                     <YAxis yAxisId="cal" datakey="calories" hide={true} />
-                    <Tooltip content={renderCustomToolTipBar} offset={20} />
+                    <Tooltip content={renderCustomToolTipBar} offset={25} />
                     <Legend
                         verticalAlign="top"
                         align="right"

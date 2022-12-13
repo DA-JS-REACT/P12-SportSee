@@ -22,7 +22,7 @@ import Error from '../../components/Error'
 
 function Dashboard() {
     const { userId } = useParams()
-    const [user, setUser] = useState({ ' ': {} })
+    const [user, setUser] = useState(null)
     const [activity, setActivity] = useState([])
     const [average, setAverage] = useState([])
     const [perf, setPerf] = useState(null)
@@ -35,6 +35,9 @@ function Dashboard() {
         getAverages(setAverage, setError, setLoading, userId)
         getPerf(setPerf, setError, setLoading, userId)
     }, [userId])
+    if (user) {
+        console.log(user)
+    }
 
     return (
         <section className="dashboard-Wrapper">

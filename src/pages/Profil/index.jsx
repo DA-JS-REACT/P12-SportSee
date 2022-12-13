@@ -13,7 +13,7 @@ function Profil() {
             {isLoading ? (
                 <Loader />
             ) : (
-                <article>
+                <article className="profil-Wrapper">
                     {' '}
                     {data.users.map((user) => (
                         <ul key={user.id}>
