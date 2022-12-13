@@ -1,11 +1,14 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 import './index.css'
+
 /**
  *  Header to the app with navigation
  * @returns {JsxElement}
  */
 function Header() {
+    const { userId } = useParams()
+
     return (
         <div className="header-Wrapper">
             <div className="header-logo">
@@ -28,7 +31,7 @@ function Header() {
                     </li>
                     <li className="nav-item-list">
                         <NavLink
-                            to="/profil"
+                            to={`/profil/${userId}`}
                             className={({ isActive }) =>
                                 isActive ? 'active' : ''
                             }

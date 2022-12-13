@@ -35,9 +35,6 @@ function Dashboard() {
         getAverages(setAverage, setError, setLoading, userId)
         getPerf(setPerf, setError, setLoading, userId)
     }, [userId])
-    if (user) {
-        console.log(user)
-    }
 
     return (
         <section className="dashboard-Wrapper">

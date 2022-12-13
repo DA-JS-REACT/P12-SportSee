@@ -1,0 +1,32 @@
+.profil-Wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.profil-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+.profil-info {
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profil-info h2 {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.profil-info a {
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 1.5rem;
+}

@@ -1,26 +1,37 @@
-import { useFetch } from '../../Hooks'
-import Loader from '../../components/Loader'
+/**
+ *Page only for checking if data is mocked or not
+ */
+import { dataMocked } from '../../Services/Api/settings'
+import Header from '../../components/header'
+import LayoutVertical from '../../components/layoutVertical'
+import './index.css'
+import { Link, useParams } from 'react-router-dom'
 
 function Profil() {
-    const url = '../data/mockdata.json'
-    const { data, error, isLoading } = useFetch(url)
-    console.log(data)
-    if (error) {
-        return <div>Oups il y a eu un problème</div>
-    }
+    const { userId } = useParams()
     return (
-        <div>
-            {isLoading ? (
-                <Loader />
+        <div className="profil-Wrapper">
+            <Header />
+            {dataMocked ? (
+                <div className="profil-container">
+                    <LayoutVertical />
+                    <div className="profil-info">
+                        <h2>les datas proviennent d'ici </h2>
+                        <Link to={`/dashboard/${userId}`}>
+                            Retour au dashboard
+                        </Link>
+                    </div>
+                </div>
             ) : (
-                <article className="profil-Wrapper">
-                    {' '}
-                    {data.users.map((user) => (
-                        <ul key={user.id}>
-                            <li> {user.id}</li>
-                        </ul>
-                    ))}
-                </article>
+                <div className="profil-container">
+                    <LayoutVertical />
+                    <div className="profil-info">
+                        <h2>les datas proviennent de la micro Api </h2>
+                        <Link to={`/dashboard/${userId}`}>
+                            Retour au dashboard
+                        </Link>
+                    </div>
+                </div>
             )}
         </div>
     )
