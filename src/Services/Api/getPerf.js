@@ -12,7 +12,7 @@ import { dataMocked } from './settings'
  * @param {State} setError  - state which handles errors on the call Api
  * @param {State} setLoading - state which manages call loads Api
  * @param {String} userId  - id of the user retrieved on url
- * @returns {FetchResponse}
+ * @returns {Promise}
  */
 export async function getPerf(setPerf, setError, setLoading, userId) {
     let url = ''
@@ -30,6 +30,7 @@ export async function getPerf(setPerf, setError, setLoading, userId) {
             Accept: 'application/json',
         },
     }
+    setLoading(true)
     try {
         const response = await fetch(url, fetchOptions)
 
@@ -40,6 +41,7 @@ export async function getPerf(setPerf, setError, setLoading, userId) {
             const performance = result.perf.find(
                 (perform) => perform.userId === id
             )
+
             const data = reshapePerf(performance)
             const getPerf = new Perf(data)
             setPerf(getPerf)

@@ -53,7 +53,7 @@ function Dashboard() {
                                 <BarChartSession data={activity} />
                                 <div className="graph">
                                     <LinearChartAverage data={average} />
-                                    <RadarChartPerf data={perf} />
+                                    <RadarChartPerf data={perf.dataOfperf} />
                                     <RadialChartScore data={user.score} />
                                 </div>
                             </div>

@@ -4,8 +4,10 @@
 
 export default class Perf {
     /**
-     *
-     * @param {array} data data for perform by the user
+     * @class Create formated data of user performance
+     * @param {Object} data data for perform by the user
+     * @param {Object} data.kind
+     * @param {Array} data.dataOfperf
      */
     constructor(data) {
         this._kind = data.kind
@@ -15,7 +17,9 @@ export default class Perf {
     get kind() {
         return this._kind
     }
-
+    /**
+     * @return {Array}
+     */
     get dataOfperf() {
         const translationToFr = [
             'Cardio',

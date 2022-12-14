@@ -12,7 +12,7 @@ import { dataMocked } from './settings'
  * @param {State} setError  - state which handles errors on the call Api
  * @param {State} setLoading - state which manages call loads Api
  * @param {String} userId  - id of the user retrieved on url
- * @returns {FetchResponse}
+ * @returns {Promise }
  */
 
 export async function getUser(setUser, setError, setLoading, userId) {
@@ -31,7 +31,7 @@ export async function getUser(setUser, setError, setLoading, userId) {
             Accept: 'application/json',
         },
     }
-
+    setLoading(true)
     try {
         const response = await fetch(url, fetchOptions)
 

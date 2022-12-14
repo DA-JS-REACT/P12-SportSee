@@ -16,7 +16,7 @@ import './index.css'
 import { renderCustomTooltipLinear } from './utils'
 /**
  *Diagram LinearChart of Recharts
- * @param {array} data - data for the Diagram
+ * @param {Array.<{formatDay: String,duration: Number}>} data - data for the Diagram
  * @returns {JsxElement}
  */
 function LinearChartAverage({ data }) {

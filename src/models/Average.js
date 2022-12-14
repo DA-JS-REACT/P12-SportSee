@@ -4,8 +4,11 @@
 
 export default class Average {
     /**
-     *
-     * @param {array} data data for sessions by the user
+     * @class Create formated data of user sessions-averages
+     * @param {Object} data data for sessions by the user
+     * @param {Number} data.day
+     * @param {Number} data.formatDay
+     * @param {Number} data.duration
      */
     constructor(data) {
         this._day = data.day
@@ -19,7 +22,9 @@ export default class Average {
     get duration() {
         return this._duration
     }
-
+    /**
+     * @return {string}
+     */
     get formatDay() {
         const format = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
         let newDay = ''

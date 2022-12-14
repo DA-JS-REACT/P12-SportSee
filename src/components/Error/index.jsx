@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import './index.css'
 /**
  *
- * @param {String} title -  type of error Http ex : 404, there is a default value set with PropTypes
- * @param {String} message -  custom message for the  error , there is a default value set with PropTypes
+ * @param {String} [title=404] -  type of error Http ex : 404, there is a default value set with PropTypes
+ * @param {String} [message=`Cette page ${location.pathname}  n'existe pas`] -  custom message for the  error , there is a default value set with PropTypes
  * @returns {JsxElement}
  */
 function Error({ title, message }) {

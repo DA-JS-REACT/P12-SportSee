@@ -12,7 +12,7 @@ import './index.css'
 
 /**
  * Diagram RadialBarChart of Recharts
- * @param {array} data  - data for diagram
+ * @param {Array.<{score: Number,fill: String}>} data  - data for diagram
  * @returns {JsxElement}
  */
 function RadialChartScore({ data }) {

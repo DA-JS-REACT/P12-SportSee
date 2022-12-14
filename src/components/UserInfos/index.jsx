@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
  *
  * @param {String} value - value that is received to call Api of User
  * @param {String} KeyData - which allows the display according to the desired data
- * @returns
+ * @returns {JsxElement}
  */
 function UserInfos({ value, keyData }) {
     let title = ' '

@@ -4,8 +4,8 @@
 
 /**
  *
- * @param {array} data - data to receive from Api endpoint user
- * @returns  array of object
+ * @param {Object} data - data to receive from Api endpoint user
+ * @returns  {Object}
  */
 export default function reshapeUser(data) {
     const firstname = data.userInfos.firstName
@@ -29,8 +29,8 @@ export default function reshapeUser(data) {
 }
 /**
  *
- * @param {array} data - data to receive from Api endpoint activity
- * @returns  array of object
+ * @param {Object} data - data to receive from Api endpoint activity
+ * @returns  {Object}
  */
 export function reshapeActivity(data) {
     const date = data.day
@@ -48,8 +48,8 @@ export function reshapeActivity(data) {
 
 /**
  *
- * @param {array} data - data to receive from Api endpoint average-sessions
- * @returns  array of object
+ * @param {Object} data - data to receive from Api endpoint average-sessions
+ * @returns  {Object}
  */
 export function reshapeAverage(data) {
     const day = data.day
@@ -66,8 +66,8 @@ export function reshapeAverage(data) {
 
 /**
  *
- * @param {array} data - data to receive from Api endpoint performance
- * @returns  array of object
+ * @param {Object} data - data to receive from Api endpoint performance
+ * @returns  {Object}
  */
 export function reshapePerf(data) {
     const kind = data.kind

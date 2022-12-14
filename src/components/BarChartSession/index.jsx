@@ -17,7 +17,7 @@ import { renderCustomToolTipBar } from './utils'
 import { renderColorfulLegendText } from './utils'
 /**
  * Diagram BarChart of Recharts
- * @param {array}  data - data for diagram
+ * @param {Array.<{day:Number,kilogram:Number,calories:Number}>}  data - data for diagram
  * @returns  {JsxElement}
  */
 function BarChartSession({ data }) {
@@ -91,6 +91,7 @@ BarChartSession.propTypes = {
         PropTypes.shape({
             kilogram: PropTypes.number,
             calories: PropTypes.number,
+            day: PropTypes.number,
         })
     ).isRequired,
 }

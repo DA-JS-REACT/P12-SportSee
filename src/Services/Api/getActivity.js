@@ -12,7 +12,7 @@ import { dataMocked } from './settings'
  * @param {State} setError  - state which handles errors on the call Api
  * @param {State} setLoading - state which manages call loads Api
  * @param {String} userId  - id of the user retrieved on url
- * @returns {FetchResponse}
+ * @returns {Promise}
  */
 export async function getActivity(setActivity, setError, setLoading, userId) {
     let url = ''
@@ -30,6 +30,7 @@ export async function getActivity(setActivity, setError, setLoading, userId) {
             Accept: 'application/json',
         },
     }
+    setLoading(true)
     try {
         const response = await fetch(url, fetchOptions)
 
@@ -44,7 +45,6 @@ export async function getActivity(setActivity, setError, setLoading, userId) {
             let sessionsOfUser = []
             activity.sessions.forEach((element) => {
                 const data = reshapeActivity(element)
-
                 const getActivity = new Activity(data)
                 sessionsOfUser.push(getActivity)
             })

@@ -13,20 +13,14 @@ import './index.css'
 import PropTypes from 'prop-types'
 /**
  * Diagram RadarChart of Recharts
- * @param {array} data - data for the Diagram
+ * @param {Array.<{subject: String, value: Number}>} data - data for the Diagram
  * @returns {JsxElement}
  */
 function RadarChartPerf({ data }) {
     return (
         <div className="radarchart-Wrapper">
             <ResponsiveContainer width="100%" height="100%">
-                <RadarChart
-                    cx="50%"
-                    cy="50%"
-                    outerRadius="65%"
-                    data={data.dataOfperf}
-                    className="test"
-                >
+                <RadarChart cx="50%" cy="50%" outerRadius="65%" data={data}>
                     <PolarGrid radialLines={false} />
                     <PolarAngleAxis
                         dataKey="subject"
@@ -45,7 +39,12 @@ function RadarChartPerf({ data }) {
     )
 }
 RadarChartPerf.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            subject: PropTypes.string,
+            value: PropTypes.number,
+        })
+    ).isRequired,
 }
 
 export default RadarChartPerf
