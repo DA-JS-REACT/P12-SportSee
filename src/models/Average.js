@@ -23,6 +23,7 @@ export default class Average {
         return this._duration
     }
     /**
+     * transforms the date into days of the week
      * @return {string}
      */
     get formatDay() {

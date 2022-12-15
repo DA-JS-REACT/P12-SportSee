@@ -31,6 +31,7 @@ export default class Activity {
         return this._calories
     }
     /**
+     * retrieves the day of the date
      * @return {Number} day
      */
     get day() {

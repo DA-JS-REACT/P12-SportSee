@@ -18,6 +18,7 @@ export default class Perf {
         return this._kind
     }
     /**
+     * Create a translation from EN to Fr of the values Kind with their values
      * @return {Array}
      */
     get dataOfperf() {

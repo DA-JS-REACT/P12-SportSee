@@ -41,7 +41,7 @@ function Dashboard() {
             <Header />
             <div className="dashboard-container">
                 <LayoutVertical />
-                {isLoading ? (
+                {isLoading && !error ? (
                     <Loader />
                 ) : user && activity && average && perf ? (
                     <div className="container-user">
@@ -78,10 +78,8 @@ function Dashboard() {
                             </aside>
                         </section>
                     </div>
-                ) : error ? (
-                    <Error />
                 ) : (
-                    <Error title={'500'} message={"une erreur s'est prduite"} />
+                    <Error />
                 )}
             </div>
         </section>

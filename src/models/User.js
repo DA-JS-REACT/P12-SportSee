@@ -45,6 +45,7 @@ export default class User {
         return `${this._lipides}g`
     }
     /**
+     * Create object containing value score in percent and color
      * @return {Array.<Object>}
      */
     get score() {
