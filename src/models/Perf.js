@@ -6,8 +6,10 @@ export default class Perf {
     /**
      * @class Create formated data of user performance
      * @param {Object} data data for perform by the user
-     * @param {Object} data.kind
-     * @param {Array} data.dataOfperf
+     * @param {Array.<String>} data.kind
+     * @param {Object} data.dataOfperf
+     * @param {number} data.dataOfperf.value
+     * @param {number} data.dataOfperf.kind
      */
     constructor(data) {
         this._kind = data.kind

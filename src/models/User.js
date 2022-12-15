@@ -7,12 +7,16 @@ export default class User {
      * @class Create formated data of user profil
      * @param {Object} data  data of users in API
      * @param {String} data.firstname
-     * @param {Array.<{Object}>} data.keyData
-     * @param {Number} data.calories
-     * @param {Number} data.proteines
-     * @param {Number} data.lipides
-     * @param {Number} data.glucides
-     * @param {Number} data.score
+     * @param {Object} data.keyData
+     * @param {number} data.keyData.calorieCount
+     * @param {number} data.keyData.proteinCount
+     * @param {number} data.keyData.carbohydrateCount
+     * @param {number} data.keyData.lipidCount
+     * @param {number} data.calories
+     * @param {number} data.proteines
+     * @param {number} data.lipides
+     * @param {number} data.glucides
+     * @param {number} data.score
      */
     constructor(data) {
         this._firstName = data.firstname
@@ -25,7 +29,7 @@ export default class User {
     }
 
     get firstName() {
-        let name = this._firstName[0].toUpperCase() + this._firstName.slice(1)
+        const name = this._firstName[0].toUpperCase() + this._firstName.slice(1)
         return name
     }
     get keyData() {

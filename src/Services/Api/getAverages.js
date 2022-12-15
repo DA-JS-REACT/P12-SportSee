@@ -3,15 +3,15 @@
  */
 import Average from '../../Models/Average'
 import { reshapeAverage } from './reshape'
-import { dataMocked } from './settings'
+import { dataMocked, pathApi } from './settings'
 
 /**
  *
- * @param {State} setAverages  - state which manages the data
- * @param {State} setError  - state which handles errors on the call Api
- * @param {State} setLoading - state which manages call loads Api
+ * @param {function} setAverages  - state which manages the data
+ * @param {function} setError  - state which handles errors on the call Api
+ * @param {function} setLoading - state which manages call loads Api
  * @param {String} userId  - id of the user retrieved on url
- * @returns {Promise}
+ * @returns {Promise.<void>} void
  */
 
 export async function getAverages(setAverages, setError, setLoading, userId) {
@@ -19,7 +19,7 @@ export async function getAverages(setAverages, setError, setLoading, userId) {
     if (dataMocked) {
         url = '../data/mockdata.json'
     } else {
-        url = `http://localhost:3000/user/${userId}/average-sessions`
+        url = `${pathApi}/user/${userId}/average-sessions`
     }
 
     const fetchOptions = {
@@ -44,7 +44,6 @@ export async function getAverages(setAverages, setError, setLoading, userId) {
 
             let averageOfUser = []
             average.sessions.forEach((element) => {
-                console.log(element)
                 const data = reshapeAverage(element)
                 const getAverage = new Average(data)
                 averageOfUser.push(getAverage)
@@ -67,6 +66,4 @@ export async function getAverages(setAverages, setError, setLoading, userId) {
     } finally {
         setLoading(false)
     }
-
-    return setAverages, setError, setLoading
 }

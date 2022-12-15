@@ -4,15 +4,15 @@
 
 import User from '../../Models/User'
 import reshapeUser from './reshape'
-import { dataMocked } from './settings'
+import { dataMocked, pathApi } from './settings'
 
 /**
  *
- * @param {State} setUser  - state which manages the data
- * @param {State} setError  - state which handles errors on the call Api
- * @param {State} setLoading - state which manages call loads Api
+ * @param {function} setUser  - state which manages the data
+ * @param {function} setError  - state which handles errors on the call Api
+ * @param {function} setLoading - state which manages call loads Api
  * @param {String} userId  - id of the user retrieved on url
- * @returns {Promise }
+ * @returns {Promise.<void>} void
  */
 
 export async function getUser(setUser, setError, setLoading, userId) {
@@ -20,7 +20,7 @@ export async function getUser(setUser, setError, setLoading, userId) {
     if (dataMocked) {
         url = '../data/mockdata.json'
     } else {
-        url = `http://localhost:3000/user/${userId}`
+        url = `${pathApi}/user/${userId}`
     }
 
     const fetchOptions = {
@@ -51,10 +51,7 @@ export async function getUser(setUser, setError, setLoading, userId) {
     } catch (err) {
         console.log(err)
         setError(true)
-        throw new Error('une erreur est survenu')
     } finally {
         setLoading(false)
     }
-
-    return setUser, setError, setLoading
 }

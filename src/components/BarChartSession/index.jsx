@@ -17,9 +17,10 @@ import { renderCustomToolTipBar } from './utils'
 import { renderColorfulLegendText } from './utils'
 /**
  * Diagram BarChart of Recharts
- * @param {Array.<{day:Number,kilogram:Number,calories:Number}>}  data - data for diagram
+ * @param {Array.<{day:Number,kilogram:Number,calories:Number}>} data - data for diagram
  * @returns  {JsxElement}
  */
+
 function BarChartSession({ data }) {
     return (
         <div className="barchart-wrapper">

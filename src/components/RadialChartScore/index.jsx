@@ -16,12 +16,6 @@ import './index.css'
  * @returns {JsxElement}
  */
 function RadialChartScore({ data }) {
-    const test = [
-        {
-            score: 100,
-            fill: '#FF0000',
-        },
-    ]
     return (
         <div className="radialChart-Wrapper">
             <h2 className="radialChart-title">Score</h2>

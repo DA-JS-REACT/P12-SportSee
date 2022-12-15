@@ -4,22 +4,22 @@
 
 import Perf from '../../Models/Perf'
 import { reshapePerf } from './reshape'
-import { dataMocked } from './settings'
+import { dataMocked, pathApi } from './settings'
 
 /**
  *
- * @param {State} setPerf  - state which manages the data
- * @param {State} setError  - state which handles errors on the call Api
- * @param {State} setLoading - state which manages call loads Api
+ * @param {function} setPerf  - state which manages the data
+ * @param {function} setError  - state which handles errors on the call Api
+ * @param {function} setLoading - state which manages call loads Api
  * @param {String} userId  - id of the user retrieved on url
- * @returns {Promise}
+ * @returns {Promise.<Void>} void
  */
 export async function getPerf(setPerf, setError, setLoading, userId) {
     let url = ''
     if (dataMocked) {
         url = '../data/mockdata.json'
     } else {
-        url = `http://localhost:3000/user/${userId}/performance`
+        url = `${pathApi}/user/${userId}/performance`
     }
 
     const fetchOptions = {
@@ -56,6 +56,4 @@ export async function getPerf(setPerf, setError, setLoading, userId) {
     } finally {
         setLoading(false)
     }
-
-    return setPerf, setError, setLoading
 }

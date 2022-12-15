@@ -4,22 +4,22 @@
 
 import Activity from '../../Models/Activity'
 import { reshapeActivity } from './reshape'
-import { dataMocked } from './settings'
+import { dataMocked, pathApi } from './settings'
 
 /**
  *
- * @param {State} setActivity - state which manages the data
- * @param {State} setError  - state which handles errors on the call Api
- * @param {State} setLoading - state which manages call loads Api
+ * @param {function} setActivity - state which manages the data
+ * @param {function} setError  - state which handles errors on the call Api
+ * @param {function} setLoading - state which manages call loads Api
  * @param {String} userId  - id of the user retrieved on url
- * @returns {Promise}
+ * @returns {Promise.<void>} void
  */
 export async function getActivity(setActivity, setError, setLoading, userId) {
     let url = ''
     if (dataMocked) {
         url = '../data/mockdata.json'
     } else {
-        url = `http://localhost:3000/user/${userId}/activity`
+        url = `${pathApi}/user/${userId}/activity`
     }
 
     const fetchOptions = {
@@ -65,6 +65,4 @@ export async function getActivity(setActivity, setError, setLoading, userId) {
     } finally {
         setLoading(false)
     }
-
-    return setActivity, setError, setLoading
 }
