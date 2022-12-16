@@ -13,7 +13,7 @@ import {
 
 import PropTypes from 'prop-types'
 import './index.css'
-import { renderCustomTooltipLinear } from './utils'
+import CustomTooltipLinear from '../CustomToolTipLinear'
 /**
  *Diagram LinearChart of Recharts
  * @param {Array.<{formatDay: String,duration: Number}>} data - data for the Diagram
@@ -53,7 +53,7 @@ function LinearChartAverage({ data }) {
                     />
 
                     <Tooltip
-                        content={renderCustomTooltipLinear}
+                        content={<CustomTooltipLinear />}
                         cursor={{ stroke: 'red', strokeWidth: 2 }}
                     />
 

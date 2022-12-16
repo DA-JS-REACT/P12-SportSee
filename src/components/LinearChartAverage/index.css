@@ -21,13 +21,3 @@
     top: 8%;
     left: 8%;
 }
-
-.tooltip-linearChart {
-    width: 39px;
-    height: 25px;
-    background: var(--color-primary);
-}
-.label-linearChart {
-    color: #000000;
-    font-size: 8px;
-}

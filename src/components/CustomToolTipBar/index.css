@@ -1,0 +1,14 @@
+.custom-tooltip {
+    width: 39px;
+    height: 63px;
+    background: var(--graph-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.label {
+    font-size: 7px;
+    color: var(--color-primary);
+    padding: 5px;
+}

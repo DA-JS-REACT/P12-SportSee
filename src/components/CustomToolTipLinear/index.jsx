@@ -2,13 +2,14 @@
  * Represents utils to customize Tooltip in LinearChart
  */
 import PropTypes from 'prop-types'
+import './index.css'
 /**
  *
  * @param {boolean} active
  * @param {array} payload
  * @returns {JsxElement}
  */
-export function renderCustomTooltipLinear({ active, payload }) {
+function CustomTooltipLinear({ active, payload }) {
     if (active && payload && payload.length) {
         return (
             <div className="custom-tooltip tooltip-linearChart">
@@ -19,7 +20,8 @@ export function renderCustomTooltipLinear({ active, payload }) {
 
     return null
 }
-renderCustomTooltipLinear.propTypes = {
-    active: PropTypes.bool.isRequired,
-    payload: PropTypes.array.isRequired,
+CustomTooltipLinear.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
 }
+export default CustomTooltipLinear

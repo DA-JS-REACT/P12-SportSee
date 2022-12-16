@@ -13,8 +13,8 @@ import {
 } from 'recharts'
 import PropTypes from 'prop-types'
 import './index.css'
-import { renderCustomToolTipBar } from './utils'
 import { renderColorfulLegendText } from './utils'
+import CustomToolTipBar from '../CustomToolTipBar'
 /**
  * Diagram BarChart of Recharts
  * @param {Array.<{day:Number,kilogram:Number,calories:Number}>} data - data for diagram
@@ -57,7 +57,7 @@ function BarChartSession({ data }) {
                     />
 
                     <YAxis yAxisId="cal" datakey="calories" hide={true} />
-                    <Tooltip content={renderCustomToolTipBar} offset={25} />
+                    <Tooltip content={<CustomToolTipBar />} offset={25} />
                     <Legend
                         verticalAlign="top"
                         align="right"

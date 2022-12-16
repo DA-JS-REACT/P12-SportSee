@@ -2,8 +2,8 @@
  *Page only for checking if data is mocked or not
  */
 import { dataMocked } from '../../Services/Api/settings'
-import Header from '../../components/header'
-import LayoutVertical from '../../components/layoutVertical'
+import Header from '../../components/Header'
+import LayoutVertical from '../../components/LayoutVertical'
 import './index.css'
 import { Link, useParams } from 'react-router-dom'
 
