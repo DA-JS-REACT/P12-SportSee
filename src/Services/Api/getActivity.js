@@ -14,6 +14,7 @@ import { dataMocked, pathApi } from './settings'
  * @param {String} userId  - id of the user retrieved on url
  * @returns {Promise.<void>} void
  */
+
 export async function getActivity(setActivity, setError, setLoading, userId) {
     let url = ''
     if (dataMocked) {

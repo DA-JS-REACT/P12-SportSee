@@ -16,7 +16,7 @@ function App() {
                     <Route path=":userId" element={<Profil />} />
                 </Route>
                 <Route path="/error" element={<Error />} />
-                <Route path="*" element={<Error />} />
+                <Route path="*" element={<Error page={true} />} />
                 <Route path="/dashboard">
                     <Route path=":userId" element={<Dashboard />} />
                 </Route>
