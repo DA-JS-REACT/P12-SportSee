@@ -7,7 +7,7 @@ import { reshapePerf } from './reshape'
 import { dataMocked, pathApi } from './settings'
 
 /**
- *
+ * Call Api  for endpoint performance
  * @param {function} setPerf  - state which manages the data
  * @param {function} setError  - state which handles errors on the call Api
  * @param {function} setLoading - state which manages call loads Api
