@@ -1,13 +1,14 @@
+// @ts-check
 /**
  * contain function reshape of the paths to access the data
  */
 
 /**
- *
+ * @function reshapeUser  define the path to the data
  * @param {Object} data - data to receive from Api endpoint user
  * @returns  {Object}
  */
-export default function reshapeUser(data) {
+export function reshapeUser(data) {
     const firstname = data.userInfos.firstName
     const keyData = data.keyData
     const calories = data.keyData.calorieCount
@@ -27,8 +28,9 @@ export default function reshapeUser(data) {
 
     return newData
 }
+
 /**
- *
+ * @function reshapeActivity  define the path to the data
  * @param {Object} data - data to receive from Api endpoint activity
  * @returns  {Object}
  */
@@ -47,7 +49,7 @@ export function reshapeActivity(data) {
 }
 
 /**
- *
+ * @function reshapeAverage  define the path to the data
  * @param {Object} data - data to receive from Api endpoint average-sessions
  * @returns  {Object}
  */
@@ -65,7 +67,7 @@ export function reshapeAverage(data) {
 }
 
 /**
- *
+ * @function reshapePerf  define the path to the data
  * @param {Object} data - data to receive from Api endpoint performance
  * @returns  {Object}
  */

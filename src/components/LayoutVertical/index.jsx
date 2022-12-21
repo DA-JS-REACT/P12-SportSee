@@ -3,9 +3,11 @@ import Icon1 from '../../assets/icon/icon1.svg'
 import Icon2 from '../../assets/icon/icon2.svg'
 import Icon3 from '../../assets/icon/icon3.svg'
 import Icon4 from '../../assets/icon/icon4.svg'
+import React from 'react'
 /**
  * second navigation  aside to the app
- * @returns {JsxElement}
+ * @component
+ * @returns {React.ReactElement}
  */
 function LayoutVertical() {
     return (

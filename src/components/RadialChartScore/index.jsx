@@ -1,3 +1,4 @@
+// @ts-check
 /**
  *Diagram average score - enpoint /user/:id/
  */
@@ -9,11 +10,12 @@ import {
 } from 'recharts'
 import PropTypes from 'prop-types'
 import './index.css'
+import React from 'react'
 
 /**
  * Diagram RadialBarChart of Recharts
- * @param {Array.<{score: Number,fill: String}>} data  - data for diagram
- * @returns {JsxElement}
+ * @prop {Array.<{score: Number,fill: String}>} data  - data for diagram
+ * @returns {React.ReactElement}
  */
 function RadialChartScore({ data }) {
     return (

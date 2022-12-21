@@ -1,3 +1,4 @@
+// @ts-check
 /**
  *Diagram Performance - enpoint /user/:id/performance
  */
@@ -11,10 +12,11 @@ import {
 } from 'recharts'
 import './index.css'
 import PropTypes from 'prop-types'
+import React from 'react'
 /**
  * Diagram RadarChart of Recharts
- * @param {Array.<{subject: String, value: Number}>} data - data for the Diagram
- * @returns {JsxElement}
+ * @prop {Array.<{subject: String, value: Number}>} data - data for the Diagram
+ * @returns {React.ReactElement}
  */
 function RadarChartPerf({ data }) {
     return (

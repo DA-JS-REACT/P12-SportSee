@@ -1,3 +1,4 @@
+// @ts-check
 import caloriesIcon from '../../assets/icon/caloriesIcon.svg'
 import proteinesIcon from '../../assets/icon/protein-icon.svg'
 import glucidesIcon from '../../assets/icon/carbs-icon.svg'
@@ -5,11 +6,12 @@ import lipidesIcon from '../../assets/icon/fat-icon.svg'
 import './index.css'
 
 import PropTypes from 'prop-types'
+import React from 'react'
 /**
- *
- * @param {String} value - value that is received to call Api of User
- * @param {String} KeyData - which allows the display according to the desired data
- * @returns {JsxElement}
+ * Cards which displays data from user
+ * @prop {String} value - value that is received to call Api of User
+ * @prop {String} KeyData - which allows the display according to the desired data
+ * @returns {React.ReactElement}
  */
 function UserInfos({ value, keyData }) {
     let title = ' '

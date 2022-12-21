@@ -2,12 +2,12 @@
  * Call Api  for endpoint user profil
  */
 
-import User from '../../Models/User'
-import reshapeUser from './reshape'
+import { User } from '../../Models/User'
+import { reshapeUser } from './reshape'
 import { dataMocked, pathApi } from './settings'
 
 /**
- *
+ * Call Api  for endpoint user profil
  * @param {function} setUser  - state which manages the data
  * @param {function} setError  - state which handles errors on the call Api
  * @param {function} setLoading - state which manages call loads Api

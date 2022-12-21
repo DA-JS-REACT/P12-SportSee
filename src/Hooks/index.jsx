@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 /**
  * for simulate connexion of user , only for Home page
  * @param {String} url - url of mocked data
- * @returns {Promise}
+ * @returns {Promise.<{isLoading : boolean, data : object, error : boolean}>}
  */
 export function useFetch(url) {
     const [data, setData] = useState({})

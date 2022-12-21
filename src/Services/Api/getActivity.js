@@ -1,13 +1,14 @@
+// @ts-check
 /**
  * Call Api  for endpoint activity
  */
 
-import Activity from '../../Models/Activity'
+import { Activity } from '../../Models/Activity'
 import { reshapeActivity } from './reshape'
 import { dataMocked, pathApi } from './settings'
 
 /**
- *
+ * Call Api  for endpoint activity
  * @param {function} setActivity - state which manages the data
  * @param {function} setError  - state which handles errors on the call Api
  * @param {function} setLoading - state which manages call loads Api

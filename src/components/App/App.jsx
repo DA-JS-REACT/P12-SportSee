@@ -1,3 +1,4 @@
+// @ts-check
 import './App.css'
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
@@ -6,6 +7,11 @@ import Profil from '../../Pages/Profil'
 import Dashboard from '../../Pages/Dashboard'
 import Error from '../Error'
 
+/**
+ *  Routing for the app
+ * @component
+ * @returns {React.ReactElement}
+ */
 function App() {
     return (
         <div className="App">

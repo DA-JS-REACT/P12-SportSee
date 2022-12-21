@@ -1,3 +1,4 @@
+// @ts-check
 /**
  *Diagram for the sessions - enpoint /user/:id/average-session
  */
@@ -14,10 +15,11 @@ import {
 import PropTypes from 'prop-types'
 import './index.css'
 import CustomTooltipLinear from '../CustomToolTipLinear'
+import React from 'react'
 /**
  *Diagram LinearChart of Recharts
- * @param {Array.<{formatDay: String,duration: Number}>} data - data for the Diagram
- * @returns {JsxElement}
+ * @prop {Array.<{formatDay: String,duration: Number}>} data - data for the Diagram
+ * @returns {React.ReactElement}
  */
 function LinearChartAverage({ data }) {
     return (

@@ -1,8 +1,9 @@
 /**
  * Represents the average-session of User with formated data
+ *
  */
 
-export default class Average {
+export class Average {
     /**
      * @class Create formated data of user sessions-averages
      * @param {Object} data data for sessions by the user
@@ -23,7 +24,7 @@ export default class Average {
         return this._duration
     }
     /**
-     * transforms the date into days of the week
+     * @property {function} formatDay  transforms the date into days of the week
      * @return {string}
      */
     get formatDay() {

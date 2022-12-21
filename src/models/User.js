@@ -1,10 +1,11 @@
 /**
  * Represents the User with formated data
+ * @class Create formated data of user profil
  */
 
-export default class User {
+export class User {
     /**
-     * @class Create formated data of user profil
+     * @constructor
      * @param {Object} data  data of users in API
      * @param {String} data.firstname
      * @param {Object} data.keyData
@@ -49,7 +50,7 @@ export default class User {
         return `${this._lipides}g`
     }
     /**
-     * Create object containing value score in percent and color
+     * @property {function} score Create object containing value score in percent and color
      * @return {Array.<Object>}
      */
     get score() {

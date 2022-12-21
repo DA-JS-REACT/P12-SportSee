@@ -4,9 +4,10 @@
 import PropTypes from 'prop-types'
 import './index.css'
 /**
- *
- * @param {boolean} active
- * @param {array} payload
+ * Customize ToolTip for linear to recharts
+ * @component
+ * @prop {boolean} active
+ * @prop {array} payload
  * @returns {JsxElement}
  */
 function CustomTooltipLinear({ active, payload }) {

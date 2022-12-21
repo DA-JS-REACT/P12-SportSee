@@ -1,12 +1,12 @@
 /**
  * Call Api  for endpoint average-session
  */
-import Average from '../../Models/Average'
+import { Average } from '../../Models/Average'
 import { reshapeAverage } from './reshape'
 import { dataMocked, pathApi } from './settings'
 
 /**
- *
+ * Call Api  for endpoint average-session
  * @param {function} setAverages  - state which manages the data
  * @param {function} setError  - state which handles errors on the call Api
  * @param {function} setLoading - state which manages call loads Api

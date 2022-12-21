@@ -1,3 +1,4 @@
+// @ts-check
 /**
  *Diagram for daily activity  - endpoints /user/:id/activity
  */
@@ -15,10 +16,12 @@ import PropTypes from 'prop-types'
 import './index.css'
 import { renderColorfulLegendText } from './utils'
 import CustomToolTipBar from '../CustomToolTipBar'
+import React from 'react'
 /**
  * Diagram BarChart of Recharts
- * @param {Array.<{day:Number,kilogram:Number,calories:Number}>} data - data for diagram
- * @returns  {JsxElement}
+ * @component
+ * @prop {Array.<{day:Number,kilogram:Number,calories:Number}>} data - data for diagram
+ * @returns  {React.ReactElement}
  */
 
 function BarChartSession({ data }) {
@@ -56,13 +59,13 @@ function BarChartSession({ data }) {
                         domain={['dataMin - 1', 'dataMax + 1']}
                     />
 
-                    <YAxis yAxisId="cal" datakey="calories" hide={true} />
+                    <YAxis yAxisId="cal" dataKey="calories" hide={true} />
                     <Tooltip content={<CustomToolTipBar />} offset={25} />
                     <Legend
                         verticalAlign="top"
                         align="right"
                         iconType="circle"
-                        iconSize="8"
+                        iconSize={8}
                         height={50}
                         formatter={renderColorfulLegendText}
                     />

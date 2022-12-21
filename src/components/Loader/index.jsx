@@ -1,6 +1,7 @@
+import React from 'react'
 /**
  *Loader which is displayed while waiting
- * @returns {JsxElement}
+ * @returns {React.ReactElement}
  */
 function Loader() {
     return <div className="loader"></div>

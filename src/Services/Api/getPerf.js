@@ -2,7 +2,7 @@
  * Call Api  for endpoint performance
  */
 
-import Perf from '../../Models/Perf'
+import { Perf } from '../../Models/Perf'
 import { reshapePerf } from './reshape'
 import { dataMocked, pathApi } from './settings'
 

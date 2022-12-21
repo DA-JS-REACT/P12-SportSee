@@ -2,7 +2,7 @@
  * Represents the performance of User with formated data
  */
 
-export default class Perf {
+export class Perf {
     /**
      * @class Create formated data of user performance
      * @param {Object} data data for perform by the user
@@ -20,7 +20,7 @@ export default class Perf {
         return this._kind
     }
     /**
-     * Create a translation from EN to Fr of the values Kind with their values
+     * @property {function} dataOfperf Create a translation from EN to Fr of the values Kind with their values
      * @return {Array}
      */
     get dataOfperf() {

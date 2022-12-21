@@ -1,10 +1,13 @@
+// @ts-check
+import React from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 import './index.css'
 
 /**
  *  Header to the app with navigation
- * @returns {JsxElement}
+ * @component
+ * @returns {React.ReactElement}
  */
 function Header() {
     const { userId } = useParams()

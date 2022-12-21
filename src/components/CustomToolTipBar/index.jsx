@@ -2,9 +2,10 @@ import PropTypes from 'prop-types'
 import './index.css'
 /**
  * Customize ToolTip for BarChart to recharts
- * @param {boolean} active
- * @param {Array} payload
- * @returns {JsxElement}
+ * @component
+ * @prop {boolean} active
+ * @prop {Array} payload
+ * @returns {React.ReactElement}
  */
 function CustomToolTipBar({ active, payload }) {
     if (active && payload && payload.length) {

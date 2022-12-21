@@ -1,5 +1,5 @@
 /**
- *Function for delivrate custom message in the component Banner
+ * @function random for delivrate custom message in the component Banner
  * @param {Number} min
  * @param {Number} max
  * @returns {Number} random number

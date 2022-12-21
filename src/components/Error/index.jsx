@@ -1,12 +1,15 @@
+// @ts-check
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import './index.css'
+import React from 'react'
 /**
- *
- * @param {String} [title=404] -  type of error Http ex : 404, there is a default value set with PropTypes
- * @param {String} [message=`Cette page ${location.pathname}  n'existe pas`] -  custom message for the  error , there is a default value set with PropTypes
- * @returns {JsxElement}
+ *  Generate error message  with  http code status add manually
+ * @component
+ * @prop {string} [title=404] -  type of error Http ex : 404, there is a default value set with PropTypes
+ * @prop {string} [message=`Cette page ${location.pathname}  n'existe pas`] -  custom message for the  error , there is a default value set with PropTypes
+ * @returns {React.ReactElement}
  */
 function Error({ title, message }) {
     let location = useLocation()

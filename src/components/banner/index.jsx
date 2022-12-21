@@ -1,12 +1,15 @@
+// @ts-check
 import PropTypes from 'prop-types'
+import React from 'react'
 import { random } from '../../Utils'
 import './index.css'
 /**
  * Banner for the dashboard
- * @param {String} name   - fisrtName for the user
- * @returns  {JsxElement}
+ * @component
+ * @prop {String} name   - fisrtName for the user
+ * @returns  {React.ReactElement}
  */
-function Banner({ name }) {
+export function Banner({ name }) {
     const message = [
         'Félicitation ! Vous avez explosé vos objectifs hier 👏',
         'Super ! Vous êtes en excellente forme  🔥',
@@ -23,4 +26,3 @@ function Banner({ name }) {
 Banner.propTypes = {
     name: PropTypes.string,
 }
-export default Banner

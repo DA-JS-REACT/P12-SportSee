@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/BarChartSession/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/BarChartSession/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// @ts-check
+/**
+ *Diagram for daily activity  - endpoints /user/:id/activity
+ */
+import {
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    Legend,
+    ResponsiveContainer,
+} from 'recharts'
+import PropTypes from 'prop-types'
+import './index.css'
+import { renderColorfulLegendText } from './utils'
+import CustomToolTipBar from '../CustomToolTipBar'
+import React from 'react'
+/**
+ * Diagram BarChart of Recharts
+ * @component
+ * @prop {Array.&lt;{day:Number,kilogram:Number,calories:Number}>} data - data for diagram
+ * @returns  {React.ReactElement}
+ */
+
+function BarChartSession({ data }) {
+    return (
+        &lt;div className="barchart-wrapper">
+            &lt;h2 className="barchart-title">Activité quotidienne&lt;/h2>
+            &lt;ResponsiveContainer width="100%" height={300}>
+                &lt;BarChart
+                    width={400}
+                    height={300}
+                    data={data}
+                    margin={{
+                        top: 20,
+                        right: 30,
+                        left: 20,
+                        bottom: 5,
+                    }}
+                    barGap={3}
+                >
+                    &lt;CartesianGrid strokeDasharray="3 3" vertical={false} />
+                    &lt;XAxis
+                        dataKey="day"
+                        tickLine={false}
+                        tick={{ fill: '#9B9EAC' }}
+                    />
+                    &lt;YAxis
+                        orientation="right"
+                        yAxisId="kilo"
+                        dataKey="kilogram"
+                        tickLine={false}
+                        axisLine={false}
+                        tick={{ fill: '#9B9EAC' }}
+                        tickMargin={20}
+                        type="number"
+                        domain={['dataMin - 1', 'dataMax + 1']}
+                    />
+
+                    &lt;YAxis yAxisId="cal" dataKey="calories" hide={true} />
+                    &lt;Tooltip content={&lt;CustomToolTipBar />} offset={25} />
+                    &lt;Legend
+                        verticalAlign="top"
+                        align="right"
+                        iconType="circle"
+                        iconSize={8}
+                        height={50}
+                        formatter={renderColorfulLegendText}
+                    />
+                    &lt;Bar
+                        yAxisId="kilo"
+                        dataKey="kilogram"
+                        fill="#282D30"
+                        radius={[3, 3, 0, 0]}
+                        barSize={6}
+                        name="Poids (kg)"
+                    />
+                    &lt;Bar
+                        yAxisId="cal"
+                        dataKey="calories"
+                        fill="#E60000"
+                        radius={[3, 3, 0, 0]}
+                        barSize={6}
+                        name="Calories Brûlées (kCal)"
+                    />
+                &lt;/BarChart>
+            &lt;/ResponsiveContainer>
+        &lt;/div>
+    )
+}
+BarChartSession.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            kilogram: PropTypes.number,
+            calories: PropTypes.number,
+            day: PropTypes.number,
+        })
+    ).isRequired,
+}
+
+export default BarChartSession
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Activity.html">Activity</a></li><li><a href="Average.html">Average</a></li><li><a href="Perf.html">Perf</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#BarChartSession">BarChartSession</a></li><li><a href="global.html#CustomToolTipBar">CustomToolTipBar</a></li><li><a href="global.html#CustomTooltipLinear">CustomTooltipLinear</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#LayoutVertical">LayoutVertical</a></li><li><a href="global.html#LinearChartAverage">LinearChartAverage</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#RadarChartPerf">RadarChartPerf</a></li><li><a href="global.html#RadialChartScore">RadialChartScore</a></li><li><a href="global.html#UserInfos">UserInfos</a></li><li><a href="global.html#dataMocked">dataMocked</a></li><li><a href="global.html#getActivity">getActivity</a></li><li><a href="global.html#getAverages">getAverages</a></li><li><a href="global.html#getPerf">getPerf</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#pathApi">pathApi</a></li><li><a href="global.html#randomfordelivratecustommessageinthecomponentBanner">random for delivrate custom message in the component Banner</a></li><li><a href="global.html#renderColorfulLegendText">renderColorfulLegendText</a></li><li><a href="global.html#reshapeActivitydefinethepathtothedata">reshapeActivity  define the path to the data</a></li><li><a href="global.html#reshapeAveragedefinethepathtothedata">reshapeAverage  define the path to the data</a></li><li><a href="global.html#reshapePerfdefinethepathtothedata">reshapePerf  define the path to the data</a></li><li><a href="global.html#reshapeUserdefinethepathtothedata">reshapeUser  define the path to the data</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Wed Dec 21 2022 21:37:22 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

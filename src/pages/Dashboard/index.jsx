@@ -11,7 +11,7 @@ import { getUser } from '../../Services/Api/getUser'
 import { getActivity } from '../../Services/Api/getActivity'
 import { getAverages } from '../../Services/Api/getAverages'
 import { getPerf } from '../../Services/Api/getPerf'
-import Banner from '../../components/Banner'
+import { Banner } from '../../components/Banner'
 import BarChartSession from '../../components/BarChartSession'
 import UserInfos from '../../components/UserInfos'
 import LinearChartAverage from '../../components/LinearChartAverage'
@@ -19,6 +19,7 @@ import './index.css'
 import RadarChartPerf from '../../components/RadarChartPerf'
 import RadialChartScore from '../../components/RadialChartScore'
 import Error from '../../components/Error'
+import React from 'react'
 
 function Dashboard() {
     const { userId } = useParams()

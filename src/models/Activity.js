@@ -1,8 +1,8 @@
 /**
- * Represents the activity of User with formated data
+ * Class Represents the activity of User with formated data
  */
 
-export default class Activity {
+export class Activity {
     /**
      * @class Create formated data of user activity
      * @param {Object} data data of users in API
@@ -31,7 +31,7 @@ export default class Activity {
         return this._calories
     }
     /**
-     * retrieves the day of the date
+     * @property {function} day retrieves the day of the date
      * @return {Number} day
      */
     get day() {
